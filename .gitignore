@@ -1,0 +1,29 @@
+# Secrets / credentials
+.env
+.env.*
+secrets/
+credentials/
+
+# Keys / certificates
+*.crt
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+
+# Logs / temp
+*.log
+*.tmp
+*.swp
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/

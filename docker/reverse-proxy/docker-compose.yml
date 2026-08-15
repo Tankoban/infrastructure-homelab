@@ -1,0 +1,25 @@
+services:
+  reverse-proxy:
+    image: nginx
+    container_name: reverse-proxy
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - app1
+      - app2
+
+  app1:
+    image: nginx
+    container_name: app1
+    volumes:
+      - ./app1:/usr/share/nginx/html:ro
+
+  app2:
+    image: nginx
+    container_name: app2
+    volumes:
+      - ./app2:/usr/share/nginx/html:ro
