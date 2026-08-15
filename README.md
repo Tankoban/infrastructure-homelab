@@ -8,33 +8,13 @@ The project begins with locally hosted infrastructure on Linux and progressively
 
 ## Current Architecture
 
-```text
-Linux Mint Workstation
-        |
-        | SSH
-        v
-Ubuntu Server VM
-        |
-        v
-Docker Engine
-        |
-        v
-Docker Compose
-        |
-        v
-Nginx Reverse Proxy
-        |
-        +---- Host-Based Routing
-        |
-        +---- TLS Termination
-        |
-        +---------+---------+
-                  |
-             Docker Network
-               /       \
-              v         v
-            App1       App2
-```
+![Local Infrastructure Architecture](diagrams/local-infrastructure-architecture.png)
+
+The current environment uses a Linux Mint physical host running an Ubuntu Server virtual machine through KVM/QEMU. Docker Compose manages an isolated container network containing an Nginx reverse proxy and two backend application containers.
+
+HTTP requests received on port `8080` are redirected to HTTPS on port `8443`. Nginx terminates TLS and uses hostname-based routing to direct requests for `app1.lab` and `app2.lab` to their respective backend containers.
+
+The backend application containers are not directly exposed through host ports.
 
 The current environment is hosted entirely inside the local homelab and is not publicly exposed to the Internet.
 
