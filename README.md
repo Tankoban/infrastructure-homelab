@@ -31,7 +31,7 @@ The current environment is hosted entirely inside the local homelab and is not p
 | 05 | [Nginx Reverse Proxy](docs/05-reverse-proxy/README.md) | Nginx, Docker Networking | Complete |
 | 06 | [Local Hostname Routing](docs/06-local-dns/README.md) | Name Resolution, HTTP, Nginx | Complete |
 | 07 | [HTTPS & TLS](docs/07-https-tls/README.md) | OpenSSL, TLS, HTTPS | Complete |
-| 08 | AWS Foundations | AWS, IAM, VPC | In Progress |
+| 08 | [AWS Foundations & Cloud Infrastructure](docs/08-aws-foundations/README.md) | AWS, IAM, VPC, EC2, Docker | Complete |
 | 09 | Infrastructure as Code | Terraform | Planned |
 
 ---
@@ -204,14 +204,14 @@ Configuration committed to this repository is intended to remain reproducible wi
 
 ### Phase II — AWS Infrastructure
 
-- [ ] AWS identity and access foundation
-- [ ] IAM configuration
-- [ ] VPC networking
-- [ ] Public/private subnets
-- [ ] Security groups
-- [ ] EC2 deployment
-- [ ] Cloud-hosted application
-- [ ] CloudWatch monitoring
+- [x] AWS identity and access foundation
+- [x] IAM configuration
+- [x] VPC networking
+- [x] Public/private subnets
+- [x] Security groups
+- [x] EC2 deployment
+- [x] Cloud-hosted application
+- [x] CloudWatch monitoring
 
 ### Phase III — Infrastructure as Code
 
