@@ -33,6 +33,7 @@ The current environment is hosted entirely inside the local homelab and is not p
 | 07 | [HTTPS & TLS](docs/07-https-tls/README.md) | OpenSSL, TLS, HTTPS | Complete |
 | 08 | [AWS Foundations & Cloud Infrastructure](docs/08-aws-foundations/README.md) | AWS, IAM, VPC, EC2, Docker | Complete |
 | 09 | [Terraform Foundations & Infrastructure as Code](docs/09-terraform-foundations/README.md) | Terraform, AWS, cloud-init, Docker | Complete |
+| 10 | [Security Hardening & Automation](docs/10-security-hardening/README.md) | SSH, UFW, Docker Security, Terraform | Complete |
 
 ---
 
@@ -215,8 +216,6 @@ Configuration committed to this repository is intended to remain reproducible wi
 
 ### Phase III — Infrastructure as Code
 
-### Phase III — Infrastructure as Code
-
 - [x] Terraform fundamentals
 - [x] AWS provider configuration
 - [x] VPC deployment with Terraform
@@ -226,17 +225,19 @@ Configuration committed to this repository is intended to remain reproducible wi
 - [ ] Reusable modules
 - [ ] Remote state and locking
 
-### Phase IV — Infrastructure Security & Automation
+### Phase IV — Infrastructure Security Hardening
 
-- [ ] Linux server hardening
-- [ ] SSH key-only authentication
-- [ ] Firewall policy
-- [ ] IAM least privilege
-- [ ] Centralized logging
-- [ ] Vulnerability assessment
-- [ ] Infrastructure automation
-- [ ] CI/CD security controls
-
+- [x] SSH hardening
+- [x] Host firewall with UFW
+- [x] Linux privilege review
+- [x] Docker privilege hardening
+- [x] Patch management
+- [x] Automatic security updates
+- [x] Secrets and sensitive-data review
+- [x] Security validation and negative testing
+- [x] Hardening automation with cloud-init
+- [x] Terraform replacement on bootstrap change
+- [x] Reproducible hardened EC2 deployment
 ---
 
 ## Purpose

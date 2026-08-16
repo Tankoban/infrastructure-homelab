@@ -31,7 +31,7 @@ The final environment demonstrated that the complete Terraform-managed AWS stack
 ## Terraform Project
 
 ```text
-terraform/aws/lab09-foundations/
+terraform/aws/homelab/
 ├── main.tf
 ├── outputs.tf
 ├── variables.tf
@@ -131,7 +131,7 @@ Local Terraform state and environment-specific variable files were excluded from
 A dedicated Terraform project was created under:
 
 ```text
-terraform/aws/lab09-foundations/
+terraform/aws/homelab/
 ```
 
 The configuration was separated into several files.

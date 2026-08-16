@@ -129,7 +129,8 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = [aws_security_group.web.id]
   key_name               = "homelab-ec2-key"
 
-  user_data = file("${path.module}/user-data.sh")
+  user_data                   = file("${path.module}/user-data.sh")
+  user_data_replace_on_change = true
 
   root_block_device {
     volume_type = "gp3"
