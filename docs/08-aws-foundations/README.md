@@ -1311,6 +1311,14 @@ The environment demonstrates the ability to:
 
 ---
 
+# Portfolio Summary
+
+A concise portfolio description of this lab is:
+
+> Designed and manually deployed an AWS cloud application environment using IAM, VPC networking, public and private subnets, Internet Gateway routing, Security Groups, EC2, Docker, and CloudWatch. Implemented MFA-protected administrative access, temporary AWS CLI authentication, least-privilege read-only IAM testing, containerized application hosting, and cloud infrastructure lifecycle validation.
+
+---
+
 # Next Steps
 
 The next phase will introduce Infrastructure as Code using Terraform.

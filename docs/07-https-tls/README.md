@@ -804,6 +804,13 @@ The exact browser error or TLS error matters because different failures indicate
 
 ---
 
+# Portfolio Summary
+
+A concise portfolio description of this lab is:
+
+> Added HTTPS encryption to the local containerized application stack using self-signed TLS certificates and Nginx TLS termination. Practiced certificate generation, private-key handling, secure Git exclusions, HTTP-to-HTTPS redirection, encrypted application access, and TLS troubleshooting.
+
+---
 ## Real-World Translation
 
 The local environment:

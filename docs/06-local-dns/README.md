@@ -659,6 +659,14 @@ This queries the system's configured name-resolution mechanisms and is often mor
 
 ---
 
+# Portfolio Summary
+
+A concise portfolio description of this lab is:
+
+> Implemented local hostname-based application access using Linux host resolution and Nginx virtual-host routing. Practiced name resolution, HTTP Host headers, server-name matching, and application routing while creating human-readable local endpoints for containerized services.
+
+---
+
 ## Real-World Translation
 
 The local lab:

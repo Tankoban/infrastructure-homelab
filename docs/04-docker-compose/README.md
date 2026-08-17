@@ -509,6 +509,13 @@ Check networking / mounts / ports
 
 ---
 
+# Portfolio Summary
+
+A concise portfolio description of this lab is:
+
+> Converted individually managed Docker containers into a declarative multi-container environment using Docker Compose. Practiced YAML-based service definitions, container networking, lifecycle management, restart policies, and repeatable application deployment through version-controlled infrastructure configuration.
+
+---
 ## Real-World Translation
 
 The progression so far is:

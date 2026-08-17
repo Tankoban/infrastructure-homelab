@@ -425,6 +425,14 @@ These controls will be introduced as the lab progresses rather than applying con
 
 ---
 
+# Portfolio Summary
+
+A concise portfolio description of this lab is:
+
+> Deployed and administered an Ubuntu Server virtual machine as a dedicated homelab server environment. Configured SSH-based remote administration, Linux services, package management, networking, and system troubleshooting while establishing a reusable server platform for later container, networking, and cloud infrastructure labs.
+
+---
+
 ## Real-World Translation
 
 The local environment:

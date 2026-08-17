@@ -708,6 +708,14 @@ This prevents troubleshooting from turning into random configuration changes.
 
 ---
 
+# Portfolio Summary
+
+A concise portfolio description of this lab is:
+
+> Implemented an Nginx reverse proxy in front of multiple Dockerized web applications. Configured path-based routing, container-to-container service discovery, proxy behavior, and backend isolation while troubleshooting routing and trailing-slash behavior across a multi-service container architecture.
+
+---
+
 ## Real-World Translation
 
 The lab architecture:

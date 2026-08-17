@@ -479,6 +479,14 @@ The infrastructure can be treated as replaceable rather than precious.
 
 ---
 
+# Portfolio Summary
+
+A concise portfolio description of this lab is:
+
+> Hardened an AWS-hosted Linux and Docker environment using layered security controls including SSH hardening, UFW firewall policy, least-privilege administration, automated patching, unattended security updates, container `no-new-privileges`, sensitive-data review, and negative security testing. Converted the validated security baseline into cloud-init automation and reproduced the hardened environment automatically through Terraform instance replacement.
+
+---
+
 ## Result
 
 Lab 10 produced a hardened and reproducible AWS application server baseline.

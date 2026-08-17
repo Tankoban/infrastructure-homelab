@@ -92,3 +92,9 @@ Newer kernels are not automatically better when third-party drivers are involved
 Hardware identification should happen before choosing a driver.
 Linux generally fails safely when a filesystem may be unsafe to mount.
 Troubleshooting logs and hardware IDs are often more valuable than guessing.
+
+# Portfolio Summary
+
+A concise portfolio description of this lab is:
+
+> Migrated a personal workstation environment to Linux Mint in a dual-boot configuration while troubleshooting UEFI/GRUB boot behavior, storage partitioning, hardware drivers, wireless networking, NVIDIA graphics, and peripheral compatibility. Built practical Linux administration experience through real hardware troubleshooting rather than an isolated virtual lab.

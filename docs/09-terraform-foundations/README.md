@@ -1399,6 +1399,14 @@ The completed environment demonstrates the ability to:
 
 ---
 
+# Portfolio Summary
+
+A concise portfolio description of this lab is:
+
+> Rebuilt the manually deployed AWS homelab as Infrastructure as Code using Terraform. Automated VPC networking, subnets, routing, Security Groups, EC2 deployment, dynamic Ubuntu AMI selection, cloud-init provisioning, variables, outputs, and application bootstrap. Validated reproducibility through complete destroy-and-rebuild cycles and practiced Terraform state, drift detection, and lifecycle management.
+
+---
+
 # Result
 
 The final test demonstrated:

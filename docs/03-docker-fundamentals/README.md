@@ -523,6 +523,14 @@ Checking each layer independently helps identify where a failure actually occurs
 
 ---
 
+# Portfolio Summary
+
+A concise portfolio description of this lab is:
+
+> Built foundational Docker administration skills by deploying and managing containers on Ubuntu Server. Practiced container lifecycle operations, image usage, port publishing, bind mounts, logs, restart behavior, and troubleshooting while establishing a repeatable containerized application environment.
+
+---
+
 ## Real-World Translation
 
 The local lab:
