@@ -34,6 +34,7 @@ The current environment is hosted entirely inside the local homelab and is not p
 | 08 | [AWS Foundations & Cloud Infrastructure](docs/08-aws-foundations/README.md) | AWS, IAM, VPC, EC2, Docker | Complete |
 | 09 | [Terraform Foundations & Infrastructure as Code](docs/09-terraform-foundations/README.md) | Terraform, AWS, cloud-init, Docker | Complete |
 | 10 | [Security Hardening & Automation](docs/10-security-hardening/README.md) | SSH, UFW, Docker Security, Terraform | Complete |
+| 11 | [Reusable Terraform Modules](docs/11-terraform-modules/README.md) | Terraform Modules, AWS, IaC Architecture | Complete |
 
 ---
 
@@ -222,7 +223,7 @@ Configuration committed to this repository is intended to remain reproducible wi
 - [x] EC2 deployment with Terraform
 - [x] Terraform state fundamentals
 - [x] Variables and outputs
-- [ ] Reusable modules
+- [x] Reusable modules
 - [ ] Remote state and locking
 
 ### Phase IV — Infrastructure Security Hardening
