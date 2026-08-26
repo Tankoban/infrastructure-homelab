@@ -36,9 +36,86 @@ EOF
 /usr/sbin/sshd -t
 systemctl reload ssh
 
+# ============================================================
+# 4. Install Amazon CloudWatch Agent
+# ============================================================
+
+CW_AGENT_DEB="/tmp/amazon-cloudwatch-agent.deb"
+CW_CONFIG="/opt/aws/amazon-cloudwatch-agent/etc/cloudwatch-agent.json"
+
+# Download the CloudWatch Agent package
+wget -q \
+  https://amazoncloudwatch-agent.s3.amazonaws.com/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb \
+  -O "$CW_AGENT_DEB"
+
+# Install the package
+dpkg -i "$CW_AGENT_DEB"
+
+# Remove the temporary installer
+rm -f "$CW_AGENT_DEB"
+
+# Ensure the CloudWatch Agent config directory exists
+mkdir -p /opt/aws/amazon-cloudwatch-agent/etc
+
+# Write the CloudWatch Agent configuration
+cat > "$CW_CONFIG" <<'EOF'
+{
+  "agent": {
+    "metrics_collection_interval": 60,
+    "run_as_user": "root"
+  },
+  "metrics": {
+    "namespace": "Homelab/EC2",
+    "append_dimensions": {
+      "InstanceId": "${aws:InstanceId}"
+    },
+    "metrics_collected": {
+      "mem": {
+        "measurement": [
+          "mem_used_percent"
+        ]
+      },
+      "disk": {
+        "measurement": [
+          "used_percent",
+          "inodes_free"
+        ],
+        "resources": [
+          "/"
+        ]
+      },
+      "swap": {
+        "measurement": [
+          "swap_used_percent"
+        ]
+      }
+    }
+  },
+  "logs": {
+    "logs_collected": {
+      "files": {
+        "collect_list": [
+          {
+            "file_path": "/var/log/syslog",
+            "log_group_name": "/homelab/ec2/syslog",
+            "log_stream_name": "{instance_id}"
+          }
+        ]
+      }
+    }
+  }
+}
+EOF
+
+# Load the configuration and start the CloudWatch Agent
+/opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \
+  -a fetch-config \
+  -m ec2 \
+  -c file:"$CW_CONFIG" \
+  -s
 
 # ============================================================
-# 4. HOST FIREWALL
+# 5. HOST FIREWALL
 # ============================================================
 
 ufw default deny incoming
@@ -51,20 +128,20 @@ ufw --force enable
 
 
 # ============================================================
-# 5. AUTOMATIC SECURITY UPDATES
+# 6. AUTOMATIC SECURITY UPDATES
 # ============================================================
 
 systemctl enable --now unattended-upgrades
 
 
 # ============================================================
-# 6. DOCKER
+# 7. DOCKER
 # ============================================================
 
 systemctl enable --now docker
 
 # ============================================================
-# 7. APPLICATION DIRECTORIES / FILES
+# 8. APPLICATION DIRECTORIES / FILES
 # ============================================================
 
 mkdir -p /opt/aws-web-lab/app1
@@ -113,7 +190,7 @@ server {
 EOF
 
 # ============================================================
-# 8. HARDENED DOCKER COMPOSE CONFIGURATION
+# 9. HARDENED DOCKER COMPOSE CONFIGURATION
 # ============================================================
 
 cat > /opt/aws-web-lab/docker-compose.yml <<'EOF'
@@ -122,6 +199,12 @@ services:
     image: nginx
     container_name: tf-aws-reverse-proxy
     restart: unless-stopped
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: us-east-2
+        awslogs-group: /homelab/nginx
+        awslogs-stream: reverse-proxy
     ports:
       - "80:80"
     volumes:
@@ -153,7 +236,7 @@ EOF
 
 
 # ============================================================
-# 9. START APPLICATION
+# 10. START APPLICATION
 # ============================================================
 
 cd /opt/aws-web-lab

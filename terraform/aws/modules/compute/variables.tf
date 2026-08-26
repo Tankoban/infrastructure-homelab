@@ -24,3 +24,9 @@ variable "user_data" {
   description = "Bootstrap script supplied to the EC2 instance"
   type        = string
 }
+
+variable "iam_instance_profile" {
+  description = "IAM instance profile name to attach to the EC2 instance"
+  type        = string
+  default     = null
+}

@@ -18,7 +18,18 @@ module "security" {
 module "compute" {
   source = "../modules/compute"
 
-  subnet_id         = module.networking.public_subnet_id
-  security_group_id = module.security.security_group_id
-  user_data         = file("${path.module}/user-data.sh")
+  subnet_id            = module.networking.public_subnet_id
+  security_group_id    = module.security.security_group_id
+  iam_instance_profile = module.observability.instance_profile_name
+  user_data            = file("${path.module}/user-data.sh")
+}
+
+module "observability" {
+  source = "../modules/observability"
+}
+
+module "monitoring" {
+  source = "../modules/monitoring"
+
+  instance_id = module.compute.instance_id
 }

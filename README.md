@@ -36,6 +36,9 @@ The current environment is hosted entirely inside the local homelab and is not p
 | 10 | [Security Hardening & Automation](docs/10-security-hardening/README.md) | SSH, UFW, Docker Security, Terraform | Complete |
 | 11 | [Reusable Terraform Modules](docs/11-terraform-modules/README.md) | Terraform Modules, AWS, IaC Architecture | Complete |
 | 12 | [Terraform Remote State & Locking](docs/12-terraform-remote-state/README.md) | S3 Backend, State Migration, Versioning, Encryption, Locking | Complete |
+| 13 | [CloudWatch Host Metrics](docs/13-cloudwatch-host-metrics/README.md) | CloudWatch Agent, IAM Workload Identity, Host Metrics, Automation | Complete |
+| 14 | [Centralized Logging](docs/14-centralized-logging/README.md) | CloudWatch Logs, Syslog, Docker awslogs, Log Retention | Complete |
+| 15 | [CloudWatch Alarms & Dashboard](docs/15-cloudwatch-alarms-dashboard/README.md) | Metric Alarms, Dashboard, stress-ng Validation | Complete |
 
 ---
 
@@ -240,6 +243,16 @@ Configuration committed to this repository is intended to remain reproducible wi
 - [x] Hardening automation with cloud-init
 - [x] Terraform replacement on bootstrap change
 - [x] Reproducible hardened EC2 deployment
+
+## Phase V — Observability & Logging
+
+- [x] CloudWatch Agent and host metrics
+- [x] Centralized system logging
+- [x] Container logging
+- [x] CloudWatch alarms
+- [x] CloudWatch dashboard
+- [x] Alarm validation
+
 ---
 
 ## Purpose
