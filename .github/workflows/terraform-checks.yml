@@ -1,0 +1,37 @@
+name: Terraform Checks
+
+on:
+  push:
+    branches:
+      - main
+      - lab16-github-actions
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  terraform-checks:
+    name: Terraform Format and Validate
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: terraform/aws/homelab
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Check Terraform formatting
+        run: terraform fmt -check -recursive ..
+
+      - name: Initialize Terraform
+        run: terraform init -backend=false
+
+      - name: Validate Terraform
+        run: terraform validate
