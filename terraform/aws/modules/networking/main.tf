@@ -1,4 +1,6 @@
 resource "aws_vpc" "homelab" {
+  # checkov:skip=CKV2_AWS_11:VPC Flow Logs are enabled through the observability module using this VPC's exported ID; Checkov does not resolve the cross-module relationship.
+
   cidr_block           = var.vpc_cidr
   enable_dns_support   = true
   enable_dns_hostnames = true
