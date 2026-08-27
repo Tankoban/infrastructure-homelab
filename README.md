@@ -39,6 +39,7 @@ The current environment is hosted entirely inside the local homelab and is not p
 | 13 | [CloudWatch Host Metrics](docs/13-cloudwatch-host-metrics/README.md) | CloudWatch Agent, IAM Workload Identity, Host Metrics, Automation | Complete |
 | 14 | [Centralized Logging](docs/14-centralized-logging/README.md) | CloudWatch Logs, Syslog, Docker awslogs, Log Retention | Complete |
 | 15 | [CloudWatch Alarms & Dashboard](docs/15-cloudwatch-alarms-dashboard/README.md) | Metric Alarms, Dashboard, stress-ng Validation | Complete |
+| 16 | [GitHub Actions Fundamentals](docs/16-github-actions-fundamentals/README.md) | GitHub Actions, Terraform CI, Formatting & Validation Gates | Complete |
 
 ---
 
@@ -252,6 +253,17 @@ Configuration committed to this repository is intended to remain reproducible wi
 - [x] CloudWatch alarms
 - [x] CloudWatch dashboard
 - [x] Alarm validation
+
+## Phase VI — CI/CD & IaC Quality
+
+- [x] GitHub Actions fundamentals
+- [x] Terraform formatting validation
+- [x] Terraform configuration validation
+- [x] Intentional CI failure testing
+- [ ] Terraform plan on pull requests
+- [ ] IaC security scanning
+- [ ] Secret scanning
+- [ ] Controlled deployment workflow
 
 ---
 
