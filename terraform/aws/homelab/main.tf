@@ -26,6 +26,8 @@ module "compute" {
 
 module "observability" {
   source = "../modules/observability"
+
+  vpc_id = module.networking.vpc_id
 }
 
 module "monitoring" {

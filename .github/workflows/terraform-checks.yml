@@ -2,9 +2,6 @@ name: Terraform Checks
 
 on:
   push:
-    branches:
-      - main
-      - lab17-terraform-plan-ci
 
   pull_request:
     branches:
@@ -46,6 +43,14 @@ jobs:
 
       - name: Initialize Terraform
         run: terraform init
+
+      - name: Run Checkov IaC security scan
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: terraform/aws
+          framework: terraform
+          quiet: true
+          soft_fail: false
 
       - name: Validate Terraform
         run: terraform validate
