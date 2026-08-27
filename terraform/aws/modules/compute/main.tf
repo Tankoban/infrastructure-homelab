@@ -20,6 +20,8 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "web" {
+  # checkov:skip=CKV_AWS_135:EBS optimization is not required for this low-throughput learning workload.
+  # checkov:skip=CKV_AWS_126:Standard EC2 monitoring plus CloudWatch Agent custom metrics is sufficient for the current cost-conscious homelab.
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = "t3.micro"
   subnet_id                   = var.subnet_id

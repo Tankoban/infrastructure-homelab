@@ -19,6 +19,7 @@ resource "aws_default_security_group" "default" {
 }
 
 resource "aws_subnet" "public_1" {
+  # checkov:skip=CKV_AWS_130:Public IP assignment is intentional for the current homelab architecture; private compute is planned for Phase VIII.
   vpc_id                  = aws_vpc.homelab.id
   cidr_block              = var.public_subnet_cidr
   availability_zone       = var.availability_zone

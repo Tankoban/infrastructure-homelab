@@ -35,6 +35,8 @@ resource "aws_iam_instance_profile" "cloudwatch_agent" {
 }
 
 resource "aws_cloudwatch_log_group" "syslog" {
+  # checkov:skip=CKV_AWS_158:AWS-managed encryption at rest is sufficient for this homelab; customer-managed KMS is deferred.
+  # checkov:skip=CKV_AWS_338:Seven-day retention is intentional for disposable homelab telemetry; production retention would be longer.
   name              = "/homelab/ec2/syslog"
   retention_in_days = 7
 
@@ -45,6 +47,8 @@ resource "aws_cloudwatch_log_group" "syslog" {
 }
 
 resource "aws_cloudwatch_log_group" "nginx" {
+  # checkov:skip=CKV_AWS_158:AWS-managed encryption at rest is sufficient for this homelab; customer-managed KMS is deferred.
+  # checkov:skip=CKV_AWS_338:Seven-day retention is intentional for disposable homelab telemetry; production retention would be longer.
   name              = "/homelab/nginx"
   retention_in_days = 7
 

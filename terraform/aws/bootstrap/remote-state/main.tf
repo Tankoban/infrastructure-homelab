@@ -1,4 +1,9 @@
 resource "aws_s3_bucket" "terraform_state" {
+  # checkov:skip=CKV2_AWS_62:S3 event notifications are not required for the current Terraform state backend.
+  # checkov:skip=CKV_AWS_144:Cross-region replication is intentionally deferred for this single-region learning environment.
+  # checkov:skip=CKV_AWS_18:Access logging is deferred because this homelab does not currently maintain a dedicated log destination bucket.
+  # checkov:skip=CKV2_AWS_61:A lifecycle policy is not currently required for the small persistent Terraform state backend.
+  # checkov:skip=CKV_AWS_145:Terraform state is encrypted with SSE-S3; customer-managed KMS encryption is intentionally deferred.
   bucket = var.state_bucket_name
 
   lifecycle {
