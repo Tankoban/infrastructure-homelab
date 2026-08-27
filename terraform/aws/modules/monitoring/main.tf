@@ -9,7 +9,7 @@ resource "aws_cloudwatch_metric_alarm" "high_cpu" {
   period    = 300
 
   evaluation_periods = 2
-  threshold          = 80
+  threshold          =80
 
   comparison_operator = "GreaterThanThreshold"
 
