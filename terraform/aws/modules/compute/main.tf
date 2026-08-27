@@ -45,6 +45,6 @@ resource "aws_instance" "web" {
 
   metadata_options {
     http_endpoint = "enabled"
-    http_tokens   = "optional"
+    http_tokens   = "required"
   }
 }
