@@ -4,15 +4,19 @@ on:
   push:
     branches:
       - main
-      - lab16-github-actions
+      - lab17-terraform-plan-ci
 
   pull_request:
     branches:
       - main
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   terraform-checks:
-    name: Terraform Format and Validate
+    name: Terraform Format, Validate, and Plan
 
     runs-on: ubuntu-latest
 
@@ -22,16 +26,31 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@v4
 
       - name: Check Terraform formatting
         run: terraform fmt -check -recursive ..
 
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6.2.3
+        with:
+          role-to-assume: arn:aws:iam::758862546818:role/github-actions-terraform-plan
+          aws-region: us-east-2
+          role-session-name: terraform-plan-ci
+
+      - name: Verify AWS identity
+        run: aws sts get-caller-identity
+
       - name: Initialize Terraform
-        run: terraform init -backend=false
+        run: terraform init
 
       - name: Validate Terraform
         run: terraform validate
+
+      - name: Terraform Plan
+        env:
+          TF_VAR_admin_cidr: "127.0.0.1/32"
+        run: terraform plan -input=false -no-color

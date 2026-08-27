@@ -40,6 +40,7 @@ The current environment is hosted entirely inside the local homelab and is not p
 | 14 | [Centralized Logging](docs/14-centralized-logging/README.md) | CloudWatch Logs, Syslog, Docker awslogs, Log Retention | Complete |
 | 15 | [CloudWatch Alarms & Dashboard](docs/15-cloudwatch-alarms-dashboard/README.md) | Metric Alarms, Dashboard, stress-ng Validation | Complete |
 | 16 | [GitHub Actions Fundamentals](docs/16-github-actions-fundamentals/README.md) | GitHub Actions, Terraform CI, Formatting & Validation Gates | Complete |
+| 17 | [Terraform Plan in CI](docs/17-terraform-plan-ci/README.md) | GitHub OIDC, AWS STS, IAM Plan Role, Remote State, Terraform Plan | Complete |
 
 ---
 
@@ -260,7 +261,8 @@ Configuration committed to this repository is intended to remain reproducible wi
 - [x] Terraform formatting validation
 - [x] Terraform configuration validation
 - [x] Intentional CI failure testing
-- [ ] Terraform plan on pull requests
+- [x] Terraform plan on pull requests
+- [x] Intentional Terraform plan-change testing
 - [ ] IaC security scanning
 - [ ] Secret scanning
 - [ ] Controlled deployment workflow

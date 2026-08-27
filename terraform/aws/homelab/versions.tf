@@ -10,6 +10,5 @@ terraform {
 }
 
 provider "aws" {
-  region  = "us-east-2"
-  profile = "lab-admin"
+  region = "us-east-2"
 }
