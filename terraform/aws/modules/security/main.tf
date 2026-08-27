@@ -1,3 +1,4 @@
+#checkov:skip=CKV2_AWS_5:Security group is attached to EC2 through the root module and compute module variable; Checkov does not resolve this cross-module relationship.
 resource "aws_security_group" "web" {
   name        = "tf-homelab-web-sg"
   description = "Security group for Terraform homelab web server"

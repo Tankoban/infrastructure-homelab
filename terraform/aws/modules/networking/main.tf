@@ -10,6 +10,14 @@ resource "aws_vpc" "homelab" {
   }
 }
 
+resource "aws_default_security_group" "default" {
+  vpc_id = aws_vpc.homelab.id
+
+  tags = {
+    Name = "homelab-default-sg"
+  }
+}
+
 resource "aws_subnet" "public_1" {
   vpc_id                  = aws_vpc.homelab.id
   cidr_block              = var.public_subnet_cidr

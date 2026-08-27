@@ -40,4 +40,9 @@ resource "aws_instance" "web" {
     ManagedBy   = "Terraform"
     Purpose     = "IaC-Learning"
   }
+
+  metadata_options {
+    http_endpoint = "enabled"
+    http_tokens   = "required"
+  }
 }
