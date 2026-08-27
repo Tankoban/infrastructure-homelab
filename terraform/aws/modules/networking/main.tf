@@ -5,7 +5,7 @@ resource "aws_vpc" "homelab" {
 
   tags = {
     Name        = "tf-homelab-vpc"
-    Environment = "homelab-ci-test"
+    Environment = "Lab"
     ManagedBy   = "Terraform"
   }
 }
