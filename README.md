@@ -41,6 +41,7 @@ The current environment is hosted entirely inside the local homelab and is not p
 | 15 | [CloudWatch Alarms & Dashboard](docs/15-cloudwatch-alarms-dashboard/README.md) | Metric Alarms, Dashboard, stress-ng Validation | Complete |
 | 16 | [GitHub Actions Fundamentals](docs/16-github-actions-fundamentals/README.md) | GitHub Actions, Terraform CI, Formatting & Validation Gates | Complete |
 | 17 | [Terraform Plan in CI](docs/17-terraform-plan-ci/README.md) | GitHub OIDC, AWS STS, IAM Plan Role, Remote State, Terraform Plan | Complete |
+| 18 | [IaC Security Scanning](docs/18-iac-security-scanning/README.md) | Checkov, IaC Security, IMDSv2, VPC Flow Logs, Risk Exceptions | Complete |
 
 ---
 
@@ -201,6 +202,8 @@ Configuration committed to this repository is intended to remain reproducible wi
 
 ### Phase I — Local Infrastructure
 
+Phase I establishes the local infrastructure foundation through Linux administration, virtualization, Docker, reverse proxying, local DNS, and HTTPS.
+
 - [x] Linux workstation
 - [x] Ubuntu Server
 - [x] SSH administration
@@ -211,6 +214,8 @@ Configuration committed to this repository is intended to remain reproducible wi
 - [x] HTTPS/TLS
 
 ### Phase II — AWS Infrastructure
+
+Phase II introduces core AWS infrastructure through VPC networking, EC2, IAM, security groups, cloud administration, and foundational observability.
 
 - [x] AWS identity and access foundation
 - [x] IAM configuration
@@ -223,6 +228,8 @@ Configuration committed to this repository is intended to remain reproducible wi
 
 ### Phase III — Infrastructure as Code
 
+Phase III converts the AWS environment into reusable Terraform infrastructure using declarative configuration, modules, remote state, state locking, and repeatable deployments.
+
 - [x] Terraform fundamentals
 - [x] AWS provider configuration
 - [x] VPC deployment with Terraform
@@ -233,6 +240,8 @@ Configuration committed to this repository is intended to remain reproducible wi
 - [x] Remote state and locking
 
 ### Phase IV — Infrastructure Security Hardening
+
+Phase IV strengthens the infrastructure through SSH hardening, host firewalls, patching, least privilege, container protections, and security-focused configuration as code.
 
 - [x] SSH hardening
 - [x] Host firewall with UFW
@@ -248,6 +257,8 @@ Configuration committed to this repository is intended to remain reproducible wi
 
 ## Phase V — Observability & Logging
 
+Phase V adds host metrics, centralized logging, CloudWatch alarms, dashboards, workload identity, and controlled monitoring validation.
+
 - [x] CloudWatch Agent and host metrics
 - [x] Centralized system logging
 - [x] Container logging
@@ -256,6 +267,8 @@ Configuration committed to this repository is intended to remain reproducible wi
 - [x] Alarm validation
 
 ## Phase VI — CI/CD & IaC Quality
+
+Phase VI introduces automated infrastructure validation, AWS-aware Terraform planning, and IaC security enforcement through GitHub Actions using OIDC, remote state access, Checkov scanning, and documented risk decisions.
 
 - [x] GitHub Actions fundamentals
 - [x] Terraform formatting validation
