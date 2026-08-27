@@ -51,4 +51,6 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
+        env:
+          TF_VAR_admin_cidr: "127.0.0.1/32"
         run: terraform plan -input=false -no-color
