@@ -2,9 +2,6 @@ name: Terraform Checks
 
 on:
   push:
-    branches:
-      - main
-      - lab17-terraform-plan-ci
 
   pull_request:
     branches:
