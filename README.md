@@ -43,6 +43,7 @@ The current environment is hosted entirely inside the local homelab and is not p
 | 17 | [Terraform Plan in CI](docs/17-terraform-plan-ci/README.md) | GitHub OIDC, AWS STS, IAM Plan Role, Remote State, Terraform Plan | Complete |
 | 18 | [IaC Security Scanning](docs/18-iac-security-scanning/README.md) | Checkov, IaC Security, IMDSv2, VPC Flow Logs, Risk Exceptions | Complete |
 | 19 | [Secret Scanning](docs/19-secret-scanning/README.md) | Gitleaks, Secret Detection, Custom Sentinel Rules, Git Privacy | Complete |
+| 20 | [Controlled Terraform Deployment](docs/20-controlled-deployment/README.md) | GitHub Environments, OIDC Deploy Role, Approval Gates, Terraform Apply | Complete |
 
 ---
 
@@ -269,17 +270,27 @@ Phase V adds host metrics, centralized logging, CloudWatch alarms, dashboards, w
 
 ## Phase VI — CI/CD & IaC Quality
 
-Phase VI introduces automated infrastructure validation, AWS-aware Terraform planning, and IaC security enforcement through GitHub Actions using OIDC, remote state access, Checkov scanning, and documented risk decisions.
+Phase VI introduces automated infrastructure validation, AWS-aware Terraform planning, IaC security enforcement, secret detection, and controlled Terraform deployment through GitHub Actions using OIDC, remote state access, Checkov, Gitleaks, protected environments, and explicit approval gates.
 
 - [x] GitHub Actions fundamentals
 - [x] Terraform formatting validation
 - [x] Terraform configuration validation
 - [x] Intentional CI failure testing
-- [x] Terraform plan on pull requests
+- [x] AWS OIDC authentication for GitHub Actions
+- [x] Short-lived AWS credentials
+- [x] Terraform remote-state access in CI
+- [x] Terraform plan in CI
 - [x] Intentional Terraform plan-change testing
 - [x] IaC security scanning
-- [ ] Secret scanning
-- [ ] Controlled deployment workflow
+- [x] Security finding triage
+- [x] Security regression testing
+- [x] Secret scanning
+- [x] Deterministic secret-detection validation
+- [x] Controlled deployment workflow
+- [x] Protected GitHub deployment environment
+- [x] Required deployment approval
+- [x] Dedicated deployment IAM role
+- [x] End-to-end Terraform apply from CI
 
 ---
 
