@@ -11,8 +11,11 @@
         "StringEquals": {
           "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
         },
-        "StringLike": {
-          "token.actions.githubusercontent.com:sub": "repo:Tankoban@58151887/infrastructure-homelab@1335260505:ref:refs/heads/main"
+         "StringLike": {
+           "token.actions.githubusercontent.com:sub": [
+            "repo:Tankoban@58151887/infrastructure-homelab@1335260505:ref:refs/heads/main",
+            "repo:Tankoban@58151887/infrastructure-homelab@1335260505:ref:refs/heads/lab20-controlled-deployment"
+          ]
         }
       }
     }
