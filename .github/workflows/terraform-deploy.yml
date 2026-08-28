@@ -3,6 +3,10 @@ name: Terraform Deploy
 on:
   workflow_dispatch:
 
+  push:
+    branches:
+      - lab20-controlled-deployment
+
 permissions:
   id-token: write
   contents: read
