@@ -50,7 +50,7 @@ jobs:
         uses: step-security/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITLEAKS_VERSION: "8.24.3"
+          GITLEAKS_CONFIG: .gitleaks.toml
 
       - name: Run Checkov IaC security scan
         uses: bridgecrewio/checkov-action@v12
