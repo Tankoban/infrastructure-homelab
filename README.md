@@ -42,6 +42,7 @@ The current environment is hosted entirely inside the local homelab and is not p
 | 16 | [GitHub Actions Fundamentals](docs/16-github-actions-fundamentals/README.md) | GitHub Actions, Terraform CI, Formatting & Validation Gates | Complete |
 | 17 | [Terraform Plan in CI](docs/17-terraform-plan-ci/README.md) | GitHub OIDC, AWS STS, IAM Plan Role, Remote State, Terraform Plan | Complete |
 | 18 | [IaC Security Scanning](docs/18-iac-security-scanning/README.md) | Checkov, IaC Security, IMDSv2, VPC Flow Logs, Risk Exceptions | Complete |
+| 19 | [Secret Scanning](docs/19-secret-scanning/README.md) | Gitleaks, Secret Detection, Custom Sentinel Rules, Git Privacy | Complete |
 
 ---
 
@@ -276,7 +277,7 @@ Phase VI introduces automated infrastructure validation, AWS-aware Terraform pla
 - [x] Intentional CI failure testing
 - [x] Terraform plan on pull requests
 - [x] Intentional Terraform plan-change testing
-- [ ] IaC security scanning
+- [x] IaC security scanning
 - [ ] Secret scanning
 - [ ] Controlled deployment workflow
 
