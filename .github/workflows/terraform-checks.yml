@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v4
@@ -45,9 +47,10 @@ jobs:
         run: terraform init
 
       - name: Run Gitleaks secret scan
-        uses: gitleaks/gitleaks-action@v2
+        uses: step-security/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_VERSION: "8.24.3"
 
       - name: Run Checkov IaC security scan
         uses: bridgecrewio/checkov-action@v12
