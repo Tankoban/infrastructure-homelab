@@ -44,6 +44,11 @@ jobs:
       - name: Initialize Terraform
         run: terraform init
 
+      - name: Run Gitleaks secret scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Run Checkov IaC security scan
         uses: bridgecrewio/checkov-action@v12
         with:
