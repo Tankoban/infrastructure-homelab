@@ -1,0 +1,9 @@
+title = "Infrastructure Homelab Gitleaks Config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "homelab-test-secret"
+description = "Synthetic secret used to validate CI secret scanning"
+regex = '''TEST_SECRET_DO_NOT_COMMIT=[A-Za-z0-9]{32}'''
